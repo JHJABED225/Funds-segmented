@@ -1,4 +1,3 @@
-
 // ============================================================
 //  STATE
 // ============================================================
@@ -722,10 +721,16 @@ function renderMembers() {
     const memberPays = state.payments.filter(p=>p.memberId===m.id && p.type==='deposit').sort((a,b)=>new Date(b.date)-new Date(a.date));
     const lastPay = memberPays[0];
     let lastDepLabel = 'No deposits yet';
-    if(lastPay && lastPay.date) {
-      const d = new Date(lastPay.date+'T00:00:00');
-      lastDepLabel = d.getDate()+' '+MONTHS_SHORT[d.getMonth()]+' '+d.getFullYear();
-    }
+if(lastPay && lastPay.date) {
+  const d = new Date(lastPay.date);
+  if(!isNaN(d)) {
+    lastDepLabel = d.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    });
+  }
+}
     const isCore = m.role === 'core';
     const initials = getAvatar(m.name);
     const roleLabel = isCore ? (m.position || 'Core Member') : 'General Member';
