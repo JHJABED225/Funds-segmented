@@ -1,4 +1,3 @@
-
 // ============================================================
 //  STATE
 // ============================================================
@@ -217,7 +216,7 @@ function renderHome() {
       year: 'numeric'
     })
   : '—';
-    return `<tr><td class="mono" style="color:var(--muted);font-size:11px">${p.memberId||'—'}</td><td><div class="member-name"><div class="avatar">${getAvatar(p.memberName)}</div>${p.memberName}</div></td>
+    return `<tr><td class="mono" style="color:var(--muted);font-size:11px">$<div class="member-name"><div class="avatar">${getAvatar(p.memberName)}</div>${p.memberName}</div></td>
      <td class="mono">${C(Number(p.amount))}</td>
      <td>${MONTHS_SHORT[p.forMonth-1]||p.forMonth} ${p.forYear}</td>
      <td>${fmtDate}</td>
