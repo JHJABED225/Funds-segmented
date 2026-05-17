@@ -131,7 +131,9 @@ function navigate(page) {
 }
 
 function renderPage(page) {
+function renderPage(page) {
   if(page === 'home') renderHome();
+  if(page === 'notifications') renderNotifications();
   if(page === 'dashboard') renderDashboard();
   if(page === 'payments') renderPayments();
   if(page === 'expenses') renderExpenses();
@@ -139,7 +141,41 @@ function renderPage(page) {
   if(page === 'settings') renderSettings();
   if(page === 'my-details') renderMyDetails();
 }
+function renderNotifications(){
 
+  const notice = localStorage.getItem('noticeBox') || '';
+  const previous = localStorage.getItem('previousNoticeBox') || '';
+  const payments = localStorage.getItem('paymentsNoticeBox') || '';
+
+  const n1 = document.getElementById('notice-box');
+  const n2 = document.getElementById('previous-notice-box');
+  const n3 = document.getElementById('payments-notice-box');
+
+  if(n1) n1.value = notice;
+  if(n2) n2.value = previous;
+  if(n3) n3.value = payments;
+
+}
+
+function saveNotifications(){
+
+  localStorage.setItem(
+    'noticeBox',
+    document.getElementById('notice-box').value
+  );
+
+  localStorage.setItem(
+    'previousNoticeBox',
+    document.getElementById('previous-notice-box').value
+  );
+
+  localStorage.setItem(
+    'paymentsNoticeBox',
+    document.getElementById('payments-notice-box').value
+  );
+
+  alert('Notifications saved successfully');
+}
 // ============================================================
 //  HELPERS
 // ============================================================
