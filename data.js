@@ -141,41 +141,7 @@ function renderPage(page) {
   if(page === 'settings') renderSettings();
   if(page === 'my-details') renderMyDetails();
 }
-function renderNotifications(){
 
-  const notice = localStorage.getItem('noticeBox') || '';
-  const previous = localStorage.getItem('previousNoticeBox') || '';
-  const payments = localStorage.getItem('paymentsNoticeBox') || '';
-
-  const n1 = document.getElementById('notice-box');
-  const n2 = document.getElementById('previous-notice-box');
-  const n3 = document.getElementById('payments-notice-box');
-
-  if(n1) n1.value = notice;
-  if(n2) n2.value = previous;
-  if(n3) n3.value = payments;
-
-}
-
-function saveNotifications(){
-
-  localStorage.setItem(
-    'noticeBox',
-    document.getElementById('notice-box').value
-  );
-
-  localStorage.setItem(
-    'previousNoticeBox',
-    document.getElementById('previous-notice-box').value
-  );
-
-  localStorage.setItem(
-    'paymentsNoticeBox',
-    document.getElementById('payments-notice-box').value
-  );
-
-  alert('Notifications saved successfully');
-}
 // ============================================================
 //  HELPERS
 // ============================================================
@@ -260,6 +226,45 @@ function renderHome() {
   }).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px">No payments yet</td></tr>';
 }
 
+// ============================================================
+// Notification 
+// ============================================================
+function renderNotifications(){
+
+  const notice = localStorage.getItem('noticeBox') || '';
+  const previous = localStorage.getItem('previousNoticeBox') || '';
+  const payments = localStorage.getItem('paymentsNoticeBox') || '';
+
+  const n1 = document.getElementById('notice-box');
+  const n2 = document.getElementById('previous-notice-box');
+  const n3 = document.getElementById('payments-notice-box');
+
+  if(n1) n1.value = notice;
+  if(n2) n2.value = previous;
+  if(n3) n3.value = payments;
+
+}
+
+function saveNotifications(){
+
+  localStorage.setItem(
+    'noticeBox',
+    document.getElementById('notice-box').value
+  );
+
+  localStorage.setItem(
+    'previousNoticeBox',
+    document.getElementById('previous-notice-box').value
+  );
+
+  localStorage.setItem(
+    'paymentsNoticeBox',
+    document.getElementById('payments-notice-box').value
+  );
+
+  alert('Notifications saved successfully');
+}
+  
 // ============================================================
 //  DASHBOARD
 // ============================================================
