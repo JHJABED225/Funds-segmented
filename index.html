@@ -72,6 +72,9 @@
 <div class="nav-item active" onclick="navigate('home')">
 <span class="icon">🏠</span> Home
     </div>
+<div class="nav-item" onclick="navigate('notifications')">
+<span class="icon">🔔</span> Notifications
+</div>
 <div class="nav-section">Finance</div>
 <div class="nav-item" onclick="navigate('dashboard')">
 <span class="icon">📊</span> Dashboard
@@ -172,6 +175,37 @@
 <thead><tr><th>Member</th><th>Amount</th><th>Month</th><th>Date</th><th>Note</th></tr></thead>
 <tbody id="recent-payments"></tbody>
 </table>
+</div>
+</div>
+<!-- ===================== NOTIFICATIONS PAGE ===================== -->
+<div class="page" id="page-notifications">
+
+<div class="section-header">
+<div class="section-title">🔔 Notifications</div>
+</div>
+
+<div class="grid-3">
+
+<div class="card">
+<div class="card-title">📢 Notice</div>
+<div id="notice-box">
+No current notice
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">📜 Previous Notice</div>
+<div id="previous-notice-box">
+No previous notices
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">💳 Payments Notice</div>
+<div id="payments-notice-box">
+No payment notices
+</div>
+</div>
 </div>
 </div>
 <!-- ===================== DASHBOARD PAGE ===================== -->
