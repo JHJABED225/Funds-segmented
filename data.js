@@ -124,7 +124,7 @@ function navigate(page) {
       n.classList.add('active');
     }
   });
-  const titles = {home:'Home',dashboard:'Dashboard',payments:'Payments',expenses:'Expenses',members:'Members',settings:'Settings','my-details':'My Details'};
+  const titles = {home:'Home',notifications:'Notifications',dashboard:'Dashboard',payments:'Payments',expenses:'Expenses',members:'Members',settings:'Settings','my-details':'My Details'};
   document.getElementById('topbar-title').textContent = titles[page] || page;
   closeSidebar();
   renderPage(page);
