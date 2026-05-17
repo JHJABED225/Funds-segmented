@@ -225,6 +225,43 @@ function renderHome() {
      <td style="color:var(--muted)">${p.note||'—'}</td></tr>`;
   }).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px">No payments yet</td></tr>';
 }
+// ============================================================
+//  Notifications
+// ============================================================
+  
+function renderNotifications(){
+
+  const notice = localStorage.getItem('noticeBox') || '';
+  const previous = localStorage.getItem('previousNoticeBox') || '';
+  const payments = localStorage.getItem('paymentsNoticeBox') || '';
+
+  const n1 = document.getElementById('notice-box');
+  const n2 = document.getElementById('previous-notice-box');
+  const n3 = document.getElementById('payments-notice-box');
+
+  if(n1) n1.value = notice;
+  if(n2) n2.value = previous;
+  if(n3) n3.value = payments;
+
+}
+
+function saveNotifications(){
+
+  const n1 = document.getElementById('notice-box');
+  const n2 = document.getElementById('previous-notice-box');
+  const n3 = document.getElementById('payments-notice-box');
+
+  if(!n1 || !n2 || !n3){
+    alert('Notification boxes not found');
+    return;
+  }
+
+  localStorage.setItem('noticeBox', n1.value);
+  localStorage.setItem('previousNoticeBox', n2.value);
+  localStorage.setItem('paymentsNoticeBox', n3.value);
+
+  alert('Notifications saved successfully');
+}
   
 // ============================================================
 //  DASHBOARD
